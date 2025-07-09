@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const Index: React.FC = () => {
+const CustomHeader: React.FC = () => {
   return (
     <View>
-      <Text>Index</Text>
+      <Text>CustomHeader</Text>
     </View>
   );
 };
 
-export default Index;
+export default CustomHeader;

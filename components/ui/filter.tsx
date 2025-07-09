@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const Index: React.FC = () => {
+const Filter: React.FC = () => {
   return (
     <View>
-      <Text>Index</Text>
+      <Text>Filter</Text>
     </View>
   );
 };
 
-export default Index;
+export default Filter;

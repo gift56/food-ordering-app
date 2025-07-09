@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const Index: React.FC = () => {
+const MenuCard: React.FC = () => {
   return (
     <View>
-      <Text>Index</Text>
+      <Text>MenuCard</Text>
     </View>
   );
 };
 
-export default Index;
+export default MenuCard;

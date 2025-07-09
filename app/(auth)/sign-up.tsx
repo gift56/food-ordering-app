@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const Index: React.FC = () => {
+const SignUp: React.FC = () => {
   return (
     <View>
-      <Text>Index</Text>
+      <Text>SignUp</Text>
     </View>
   );
 };
 
-export default Index;
+export default SignUp;
