@@ -1,11 +1,21 @@
-import { View, Text, FlatList, Pressable, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  Pressable,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { images, offers } from "@/constants";
 import cn from "clsx";
 import CartButton from "@/components/cart/cart-button";
+import useAuthStore from "@/stores/auth.store";
 
 const Index: React.FC = () => {
+  const { user } = useAuthStore();
+
   return (
     <SafeAreaView className="flex-1 bg-white">
       <FlatList
@@ -61,7 +71,9 @@ const Index: React.FC = () => {
             <View className="flex-start">
               <Text className="small-bold text-primary">DELIVER TO</Text>
               <TouchableOpacity className="flex-center flex-row gap-x-1 mt-0.5">
-                <Text className="paragraph-bold text-dark-100">Croatia</Text>
+                <Text className="paragraph-bold text-dark-100">
+                  {user?.name}
+                </Text>
                 <Image
                   source={images.arrowDown}
                   className="size-3"

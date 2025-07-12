@@ -1,4 +1,4 @@
-// import { Models } from "react-native-appwrite";
+import { Models } from "react-native-appwrite";
 
 export interface MenuItem extends Models.Document {
   name: string;
@@ -90,13 +90,13 @@ interface ProfileFieldProps {
   icon: ImageSourcePropType;
 }
 
-interface CreateUserPrams {
+export interface CreateUserParams {
   email: string;
   password: string;
   name: string;
 }
 
-interface SignInParams {
+export interface SignInParams {
   email: string;
   password: string;
 }

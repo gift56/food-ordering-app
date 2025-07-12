@@ -7,13 +7,14 @@ import {
   ImageBackground,
   Image,
 } from "react-native";
-import { Slot } from "expo-router";
+import { Redirect, Slot } from "expo-router";
 import { images } from "@/constants";
+import useAuthStore from "@/stores/auth.store";
 
 export default function AuthLayout() {
-  // const { isAuthenticated } = useAuthStore();
+  const { isAuthenticated } = useAuthStore();
 
-  // if (isAuthenticated) return <Redirect href="/" />;
+  if (isAuthenticated) return <Redirect href="/" />;
 
   return (
     <KeyboardAvoidingView
