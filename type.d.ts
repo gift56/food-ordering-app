@@ -65,7 +65,7 @@ export interface PaymentInfoStripeProps {
 interface CustomButtonProps {
   onPress?: () => void;
   title?: string;
-  style?: string;
+  className?: string;
   leftIcon?: React.ReactNode;
   textStyle?: string;
   isLoading?: boolean;
