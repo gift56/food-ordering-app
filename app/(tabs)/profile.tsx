@@ -1,6 +1,8 @@
 import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { router } from "expo-router";
+import { signOut } from "@/libs/appwrite";
 import CustomButton from "@/components/ui/custom-button";
 import { images } from "@/constants";
 import CustomHeader from "@/components/ui/custom-header";
@@ -20,7 +22,13 @@ const RenderProfileInfo = ({ icon, label, value }: ProfileFieldProps) => (
 );
 
 const Profile: React.FC = () => {
-  const { user } = useAuthStore();
+  const { user, clearUser } = useAuthStore();
+
+  const handleLogout = async () => {
+    await signOut();
+    clearUser();
+    router.replace("/sign-in");
+  };
 
   if (!user) return null;
 
@@ -80,6 +88,7 @@ const Profile: React.FC = () => {
             title="Logout"
             className="border-error !bg-error/25"
             textStyle="!text-error"
+            onPress={handleLogout}
           />
         </View>
       </ScrollView>

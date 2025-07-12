@@ -1,50 +1,79 @@
-# Welcome to your Expo app 👋
+# Food Ordering App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a cross-platform mobile application for ordering food, built with React Native and Expo. It provides a seamless user experience for browsing restaurants, adding items to a cart, and placing orders.
 
-## Get started
+## 🚀 Features
 
-1. Install dependencies
+-   User authentication (sign-in/sign-up)
+-   Browse a list of food items
+-   Search for specific food items
+-   Add and remove items from a shopping cart
+-   View and manage your user profile
 
-   ```bash
-   npm install
-   ```
+## 🛠️ Technologies Used
 
-2. Start the app
+-   **React Native**: A framework for building native apps using React.
+-   **Expo**: A platform for making universal React applications.
+-   **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+-   **NativeWind**: Use Tailwind CSS for styling in React Native.
+-   **Zustand**: A small, fast, and scalable state-management solution.
+-   **Expo Router**: File-based routing for React Native and web applications.
+-   **Appwrite**: Backend server for user authentication and database management.
 
-   ```bash
-   npx expo start
-   ```
+## ⚙️ Getting Started
 
-In the output, you'll find options to open the app in a
+### Prerequisites
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+-   Node.js (v18 or newer)
+-   npm or yarn
+-   Expo CLI
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Installation
 
-## Get a fresh project
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/gift56/food-ordering-app.git
+    ```
+2.  Navigate to the project directory:
+    ```bash
+    cd food-ordering-app
+    ```
+3.  Install the dependencies:
+    ```bash
+    npm install
+    ```
 
-When you're ready, run:
+## 🏃‍♀️ Running the Application
+
+To run the application in a development environment, use one of the following commands:
+
+-   Start the development server:
+    ```bash
+    npm start
+    ```
+    or
+    ```bash
+    npx expo start
+    ```
+
+-   Run on Android:
+    ```bash
+    npm run android
+    ```
+
+-   Run on iOS:
+    ```bash
+    npm run ios
+    ```
+
+-   Run on Web:
+    ```bash
+    npm run web
+    ```
+
+##  Linting
+
+To check the code for any linting errors, run the following command:
 
 ```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+npm run lint
