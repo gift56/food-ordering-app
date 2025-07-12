@@ -55,7 +55,7 @@ interface TabBarIconProps {
   title: string;
 }
 
-interface PaymentInfoStripeProps {
+export interface PaymentInfoStripeProps {
   label: string;
   value: string;
   labelStyle?: string;

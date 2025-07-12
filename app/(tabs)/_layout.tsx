@@ -1,9 +1,8 @@
-import { Redirect, Tabs } from "expo-router";
+import { Tabs } from "expo-router";
 import { Image, Text, View } from "react-native";
 import { images } from "@/constants";
 import { TabBarIconProps } from "@/type";
 import cn from "clsx";
-import useAuthStore from "@/stores/auth.store";
 
 const TabBarIcon: React.FC<TabBarIconProps> = ({ focused, icon, title }) => (
   <View className="tab-icon">
@@ -25,10 +24,6 @@ const TabBarIcon: React.FC<TabBarIconProps> = ({ focused, icon, title }) => (
 );
 
 export default function TabLayout() {
-  const { isAuthenticated } = useAuthStore();
-
-  if (!isAuthenticated) return <Redirect href="/sign-in" />;
-
   return (
     <Tabs
       screenOptions={{

@@ -1,0 +1,18 @@
+Hi Adrian,
+
+Thank you so much for this incredible tutorial! Your explanations are clear and easy to follow, and I've learned a ton from your videos.
+
+I ran into a few issues while working on the project, but I wanted to share how I fixed them in case it helps anyone else.
+
+1.  **`AppwriteException: Network request failed`**: This was the first error I encountered. It turned out to be a multi-part issue. Initially, I had a re-render loop that was causing the app to crash, but the underlying problem was with how the images were being uploaded.
+
+2.  **`Maximum update depth exceeded`**: This was happening because the `seed` function was being called in a way that triggered an infinite re-render loop. I fixed this by creating a dedicated `SeedButton` component to encapsulate the seeding logic and manage its state locally.
+
+3.  **`ExponentFileSystem.getInfoAsync` Error**: After fixing the re-render loop, I ran into an issue where the app was trying to read a remote URL as if it were a local file. I resolved this by updating the `uploadImageToStorage` function to first download the image to a temporary local file before uploading it to Appwrite.
+
+4.  **`Invalid document structure`**: The final error was due to a type mismatch. The `storage.getFileView` function was returning a `URL` object, but the database expected a string. I fixed this by manually constructing the public URL for the uploaded file.
+
+Thanks again for the amazing content. I really appreciate the time and effort you put into creating these tutorials.
+
+Best,
+[Your Name]

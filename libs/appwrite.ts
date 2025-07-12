@@ -15,11 +15,11 @@ export const appwriteConfig = {
   platform: "com.efegift.foodordering",
   databaseId: "686ff81a0027bb1288c2",
   bucketId: "686ff55600000da4174a",
-  userCollectionId: "686ff85f002dcd460336",
-  //   categoriesCollectionId: "68643a390017b239fa0f",
-  //   menuCollectionId: "68643ad80027ddb96920",
-  //   customizationsCollectionId: "68643c0300297e5abc95",
-  //   menuCustomizationsCollectionId: "68643cd8003580ecdd8f",
+  userCollectionId: "6871aabe001316b136db",
+  categoriesCollectionId: "6871aaf70028534e89fd",
+  menuCollectionId: "6871ad84003269c9659b",
+  customizationsCollectionId: "6871b051002f3c7aebd4",
+  menuCustomizationsCollectionId: "6871b1b1002185d34dbb",
 };
 
 export const client = new Client();
@@ -86,34 +86,34 @@ export const getCurrentUser = async () => {
   }
 };
 
-// export const getMenu = async ({ category, query }: GetMenuParams) => {
-//   try {
-//     const queries: string[] = [];
+export const getMenu = async ({ category, query }: GetMenuParams) => {
+  try {
+    const queries: string[] = [];
 
-//     if (category) queries.push(Query.equal("categories", category));
-//     if (query) queries.push(Query.search("name", query));
+    if (category) queries.push(Query.equal("categories", category));
+    if (query) queries.push(Query.search("name", query));
 
-//     const menus = await databases.listDocuments(
-//       appwriteConfig.databaseId,
-//       appwriteConfig.menuCollectionId,
-//       queries
-//     );
+    const menus = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.menuCollectionId,
+      queries
+    );
 
-//     return menus.documents;
-//   } catch (e) {
-//     throw new Error(e as string);
-//   }
-// };
+    return menus.documents;
+  } catch (e) {
+    throw new Error(e as string);
+  }
+};
 
-// export const getCategories = async () => {
-//   try {
-//     const categories = await databases.listDocuments(
-//       appwriteConfig.databaseId,
-//       appwriteConfig.categoriesCollectionId
-//     );
+export const getCategories = async () => {
+  try {
+    const categories = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.categoriesCollectionId
+    );
 
-//     return categories.documents;
-//   } catch (e) {
-//     throw new Error(e as string);
-//   }
-// };
+    return categories.documents;
+  } catch (e) {
+    throw new Error(e as string);
+  }
+};

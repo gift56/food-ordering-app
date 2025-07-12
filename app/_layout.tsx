@@ -1,4 +1,4 @@
-import { SplashScreen, Stack } from "expo-router";
+import { SplashScreen, Stack, useRouter } from "expo-router";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
 
@@ -26,7 +26,8 @@ Sentry.init({
 });
 
 export default Sentry.wrap(function RootLayout() {
-  const { isLoading, fetchAuthenticatedUser } = useAuthStore();
+  const { isLoading, fetchAuthenticatedUser, isAuthenticated } = useAuthStore();
+  const router = useRouter();
 
   const [fontsLoaded, error] = useFonts({
     "Quicksand-Bold": require("../assets/fonts/Quicksand-Bold.ttf"),
@@ -44,6 +45,16 @@ export default Sentry.wrap(function RootLayout() {
   useEffect(() => {
     fetchAuthenticatedUser();
   }, [fetchAuthenticatedUser]);
+
+  useEffect(() => {
+    if (isLoading) return;
+
+    if (isAuthenticated) {
+      router.replace("/(tabs)");
+    } else {
+      router.replace("/(auth)/sign-in");
+    }
+  }, [isAuthenticated, isLoading, router]);
 
   if (!fontsLoaded || isLoading) return null;
 
