@@ -5,15 +5,15 @@
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web",
     "lint": "expo lint"
   },
   "dependencies": {
-    "@sentry/react-native": "~6.14.0",
     "clsx": "^2.1.1",
     "expo": "~53.0.17",
+    "expo-dev-client": "~5.2.4",
     "expo-font": "~13.3.2",
     "expo-router": "~5.1.3",
     "expo-splash-screen": "~0.30.10",
@@ -23,8 +23,7 @@
     "react-native": "0.79.5",
     "react-native-appwrite": "^0.10.0",
     "react-native-safe-area-context": "5.4.0",
-    "zustand": "^5.0.6",
-    "expo-dev-client": "~5.2.4"
+    "zustand": "^5.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
